@@ -1,0 +1,167 @@
+
+options
+{
+  IGNORE_CASE = true;
+  JDK_VERSION = "1.5";
+  static = true;
+}
+
+PARSER_BEGIN(QASMParser)
+package edu.usc.qufd.qasmParser;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
+
+import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.SimpleDirectedGraph;
+import java.awt.Dimension;
+import edu.usc.qufd.layout.Layout;
+
+
+import edu.usc.qufd.qasm.*;
+
+public class QASMParser
+{  
+	private static QASM qasm;
+	private static boolean firstTime=false; 
+
+	public static QASM QASMParser(String addr, Layout layout){
+		qasm=new QASM();
+
+		try
+		{
+			new QASMParser(new java.io.FileInputStream(addr)).start(layout);
+		}catch (ParseException e) {
+	      //System.err.println(":(");
+	      //System.err.println(e.printStackTrace());
+	      //e.printStackTrace();
+	      System.err.println(e.getLocalizedMessage());
+	      return null;
+	  	}catch (IOException e) {
+			System.err.println("QASM file not found!");
+			return null;
+		}
+		System.out.println("QASM "+addr+" parsing completed successfully!");
+		return qasm;
+	}
+}
+PARSER_END(QASMParser)
+
+SKIP :
+{
+  " "
+| "\r"
+| "\t"
+| "\n"
+|  <"#" (~["\n","\r"])* ("\n" | "\r" | "\r\n")?>
+}
+
+//Reserved Words TOKEN
+TOKEN:
+{
+	< ONEOP: ("measx"|"measz"|"H"|"X"|"Y"|"Z"|"S"|"T"|"nop"|"rotx"|"roty"|"rotxy"|"rotz"|"setz") >
+	|< TWOOP: ("geophase"|"cnot"|"c-z"|"c-x"|"c-y"|"ZZ"|"SS"|"swap"|"Utwo") >
+	|< THREEOP: ("toffoli") >
+	|< DEF:	("qubit"|"cbit") >
+}
+
+//IDENTIFIER TOKEN
+TOKEN : {
+ 	<ID: <LETTER>(<LETTER>|<DIGIT>)*>
+	|<#LETTER: (["a"-"z","A"-"Z"])>
+	|<#DIGIT : ["0"-"9"]>
+}
+
+TOKEN : /* Punctuation */
+{
+  < COMMA : "," >
+}
+
+TOKEN :
+{
+  < CONSTANT : (< DIGIT >)+ | "-">
+}
+
+
+//MAIN UNIT
+	
+void start(Layout layout) throws IOException : {}
+{
+  (DEF(layout))+
+  (Operation())+ <EOF>
+}
+
+void Operation(): {
+	//Quantum operation
+	qasm.incCommandNo();
+	
+	//Shifting "end" one place ahead in commands list
+	qasm.shiftEnd();
+}
+{
+	(ONEOP() | TWOOP() |THREEOP())
+	{
+		qasm.operation();
+	}
+}
+
+
+void DEF(Layout layout) : {Token qubitName, initx=null, inity=null, finalx=null, finaly=null, qubitValue=null;}
+{
+  <DEF> qubitName=<ID >(< COMMA > qubitValue=<CONSTANT>(< COMMA >initx=<CONSTANT>< COMMA >inity=<CONSTANT>< COMMA >finalx=<CONSTANT>< COMMA >finaly=<CONSTANT>)?)? 
+  {
+	//TODO: store the constant value somewhere
+	qasm.defineQubit(qubitName.image);
+	if (initx==null)	{
+		layout.assignNewQubit(qubitName.image, new Dimension(-10,0),new Dimension(-10,-10), new Dimension(-10,-10));	}
+	else if (initx.image.equals("-"))	{
+	    layout.assignNewQubit(qubitName.image, new Dimension(0,0),new Dimension(-10,-10), new Dimension((int)(Integer.valueOf(finalx.image)*(layout.getLayoutSize().width-1)/100.0),(int)(Integer.valueOf(finaly.image)*(layout.getLayoutSize().height-1)/100.0)));
+	}
+	else if (finalx.image.equals("-"))	{
+	    layout.assignNewQubit(qubitName.image,  new Dimension((int)(Integer.valueOf(initx.image)*(layout.getLayoutSize().width-1)/100.0),(int)(Integer.valueOf(inity.image)*(layout.getLayoutSize().height-1)/100.0)),
+							new Dimension((int)(Integer.valueOf(initx.image)*(layout.getLayoutSize().width-1)/100.0),(int)(Integer.valueOf(inity.image)*(layout.getLayoutSize().height-1)/100.0)), new Dimension(-10,-10));	}
+	else	{	  layout.assignNewQubit(qubitName.image, new Dimension((int)(Integer.valueOf(initx.image)*(layout.getLayoutSize().width-1)/100.0),(int)(Integer.valueOf(inity.image)*(layout.getLayoutSize().height-1)/100.0)),
+							new Dimension((int)(Integer.valueOf(initx.image)*(layout.getLayoutSize().width-1)/100.0),(int)(Integer.valueOf(inity.image)*(layout.getLayoutSize().height-1)/100.0)), new Dimension((int)(Integer.valueOf(finalx.image)*(layout.getLayoutSize().width-1)/100.0),(int)(Integer.valueOf(finaly.image)*(layout.getLayoutSize().height-1)/100.0)));
+/*	  layout.assignNewQubit(qubitName.image, new Dimension(5,(int)(Integer.valueOf(inity.image)*(layout.getLayoutSize().height-1)/100.0)),
+							new Dimension(5,(int)(Integer.valueOf(inity.image)*(layout.getLayoutSize().height-1)/100.0)), new Dimension(5,(int)(Integer.valueOf(finaly.image)*(layout.getLayoutSize().height-1)/100.0)));*/
+							
+	}
+  }
+}
+
+
+//One Operand inst.
+void ONEOP() : {
+	Token cmd, q;
+}
+{
+  ( cmd=< ONEOP >q=<ID > )
+  {
+	qasm.addOneOpInst(cmd.image, q.image);	
+  }
+}
+
+//Two operands inst.
+void TWOOP () : {
+	Token cmd, q0, q1;
+}
+{
+	cmd=<TWOOP> q0=<ID >< COMMA >q1=<ID>
+	{
+		qasm.addTwoOpInst(cmd.image, q0.image, q1.image);
+	}
+}
+
+//Three operands inst.
+//TODO: To be completed
+void THREEOP () : {
+	Token cmd, q0, q1, q2;
+}
+{
+	cmd=<THREEOP> q0=<ID >< COMMA >q1=<ID><COMMA > q2=<ID >
+  {
+    System.out.println(cmd.image+" "+ q0.image+ ","+q1.image+","+ q2.image);
+  }
+}

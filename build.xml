@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse.ant.import?>
+<project basedir="." default="build" name="QUFD">
+	<property name="javacchome" value="src/libs"/>
+	<property environment="env"/>
+	
+
+    <path id="QUFD.classpath">
+		<fileset dir="${basedir}/">
+		<include name="src/libs/*.jar"/>
+		</fileset>	
+    </path>
+    <target name="init">
+    	<javacc
+    	    target="src/edu/usc/qufd/qasmParser/QASMParser.jj"
+    	    outputdirectory="src/edu/usc/qufd/qasmParser"
+    	    javacchome="${javacchome}"
+    	    static="true"
+    	/>
+        <copy includeemptydirs="false" todir=".">
+            <fileset dir=".">
+                <exclude name="**/*.java"/>
+                <exclude name="FTGates/"/>
+                <exclude name="gurobi.jar"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete>
+            <fileset dir="src" includes="**/*.class"/>
+			<fileset dir="src/edu/usc/qufd/qasmParser" includes="**/*.java"/>
+			<fileset dir="src/libs/qpOASES-3.0beta/interfaces/octave" includes="**/*.mex"/>
+		</delete>
+		<delete file="qufd.jar" />
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="init,build-project,create_jar" name="build"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="on" destdir="src" includeantruntime="false">
+            <src path="src"/>
+            <exclude name="FTGates/"/>
+            <classpath refid="QUFD.classpath"/>
+        </javac>
+    </target>
+    <target depends="build-project" name="create_jar">
+        <jar destfile="qufd.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="edu.usc.qufd.Main"/>
+                <attribute name="Class-Path" value="."/>
+				<attribute name="Rsrc-Class-Path" value="./ src/libs/jgrapht-core-0.9.0.jar src/libs/commons-cli-1.2.jar src/libs/commons-lang3-3.1.jar src/libs/gurobi.jar src/libs/commons-logging-1.1.3.jar src/libs/javaoctave-0.6.4.jar"/>
+            </manifest>
+			<fileset dir="src" excludes="**/*.java .project .classpath"/>
+			<zipfileset src="src/libs/jar-in-jar-loader.zip" />			
+			<zipfileset dir="." includes="src/libs/jgrapht-core-0.9.0.jar"/>
+			<zipfileset dir="." includes="src/libs/commons-cli-1.2.jar"/>
+			<zipfileset dir="." includes="src/libs/commons-lang3-3.1.jar"/>
+			<zipfileset dir="." includes="src/libs/gurobi.jar"/>
+			<zipfileset dir="." includes="src/libs/commons-logging-1.1.3.jar"/>
+			<zipfileset dir="." includes="src/libs/javaoctave-0.6.4.jar"/>
+        </jar>
+    </target>
+</project>

@@ -1,0 +1,923 @@
+I. LICENSE
+
+Copyright (C) 2014 Hadi Goudarzi, Mohammad Javad Dousti, Alireza Shafaei Bejestan, and Massoud Pedram, SPORT lab, University of Southern California. 
+All rights reserved.
+
+Permission is hereby granted, without written agreement and without license or royalty fees, to use, copy, modify, and distribute this software and its documentation for any non-commercial purpose, provided that the above copyright notice and the following four paragraphs appear in all copies of this software, whether in binary form or not.
+
+IN NO EVENT SHALL THE AUTHORS OR THE UNIVERSITY OF SOUTHERN CALIFORNIA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THEY HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+THE AUTHORS AND THE UNIVERSITY OF SOUTHERN CALIFORNIA SPECIFICALLY DISCLAIM ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS, AND THE AUTHORS HAVE NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+
+If you use this software or a modified version of it, either of the following papers must be cited:
+
+- H. Goudarzi, M. J. Dousti, A. Shafaei, and M. Pedram, "Design of a universal logic block for fault-tolerant realization of any logic operation in trapped-ion quantum circuits," Quantum Inf Process, vol. 13, no. 5, pp. 1267-1299, May 2014.
+- M. J. Dousti and M. Pedram, "Minimizing the Latency of Quantum Circuits During Mapping to the Ion-trap Circuit Fabric," in Proceedings of the Conference on Design, Automation and Test in Europe, San Jose, CA, USA, 2012, pp. 840-843.
+
+II. EXCEPTIONS
+
+Note: The 3rd-party library files included in src/libs have their own respective licenses.
+
+Apache Commons and JavaOctave
+-----------------------
+Apache License 
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. Definitions.
+
+"License" shall mean the terms and conditions for use, reproduction,
+and distribution as defined by Sections 1 through 9 of this document.
+
+"Licensor" shall mean the copyright owner or entity authorized by
+the copyright owner that is granting the License.
+
+"Legal Entity" shall mean the union of the acting entity and all
+other entities that control, are controlled by, or are under common
+control with that entity. For the purposes of this definition,
+"control" means (i) the power, direct or indirect, to cause the
+direction or management of such entity, whether by contract or
+otherwise, or (ii) ownership of fifty percent (50%) or more of the
+outstanding shares, or (iii) beneficial ownership of such entity.
+
+"You" (or "Your") shall mean an individual or Legal Entity
+exercising permissions granted by this License.
+
+"Source" form shall mean the preferred form for making modifications,
+including but not limited to software source code, documentation
+source, and configuration files.
+
+"Object" form shall mean any form resulting from mechanical
+transformation or translation of a Source form, including but
+not limited to compiled object code, generated documentation,
+and conversions to other media types.
+
+"Work" shall mean the work of authorship, whether in Source or
+Object form, made available under the License, as indicated by a
+copyright notice that is included in or attached to the work
+(an example is provided in the Appendix below).
+
+"Derivative Works" shall mean any work, whether in Source or Object
+form, that is based on (or derived from) the Work and for which the
+editorial revisions, annotations, elaborations, or other modifications
+represent, as a whole, an original work of authorship. For the purposes
+of this License, Derivative Works shall not include works that remain
+separable from, or merely link (or bind by name) to the interfaces of,
+the Work and Derivative Works thereof.
+
+"Contribution" shall mean any work of authorship, including
+the original version of the Work and any modifications or additions
+to that Work or Derivative Works thereof, that is intentionally
+submitted to Licensor for inclusion in the Work by the copyright owner
+or by an individual or Legal Entity authorized to submit on behalf of
+the copyright owner. For the purposes of this definition, "submitted"
+means any form of electronic, verbal, or written communication sent
+to the Licensor or its representatives, including but not limited to
+communication on electronic mailing lists, source code control systems,
+and issue tracking systems that are managed by, or on behalf of, the
+Licensor for the purpose of discussing and improving the Work, but
+excluding communication that is conspicuously marked or otherwise
+designated in writing by the copyright owner as "Not a Contribution."
+
+"Contributor" shall mean Licensor and any individual or Legal Entity
+on behalf of whom a Contribution has been received by Licensor and
+subsequently incorporated within the Work.
+
+2. Grant of Copyright License. Subject to the terms and conditions of
+this License, each Contributor hereby grants to You a perpetual,
+worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+copyright license to reproduce, prepare Derivative Works of,
+publicly display, publicly perform, sublicense, and distribute the
+Work and such Derivative Works in Source or Object form.
+
+3. Grant of Patent License. Subject to the terms and conditions of
+this License, each Contributor hereby grants to You a perpetual,
+worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+(except as stated in this section) patent license to make, have made,
+use, offer to sell, sell, import, and otherwise transfer the Work,
+where such license applies only to those patent claims licensable
+by such Contributor that are necessarily infringed by their
+Contribution(s) alone or by combination of their Contribution(s)
+with the Work to which such Contribution(s) was submitted. If You
+institute patent litigation against any entity (including a
+cross-claim or counterclaim in a lawsuit) alleging that the Work
+or a Contribution incorporated within the Work constitutes direct
+or contributory patent infringement, then any patent licenses
+granted to You under this License for that Work shall terminate
+as of the date such litigation is filed.
+
+4. Redistribution. You may reproduce and distribute copies of the
+Work or Derivative Works thereof in any medium, with or without
+modifications, and in Source or Object form, provided that You
+meet the following conditions:
+
+(a) You must give any other recipients of the Work or
+ Derivative Works a copy of this License; and
+
+(b) You must cause any modified files to carry prominent notices
+ stating that You changed the files; and
+
+(c) You must retain, in the Source form of any Derivative Works
+ that You distribute, all copyright, patent, trademark, and
+ attribution notices from the Source form of the Work,
+ excluding those notices that do not pertain to any part of
+ the Derivative Works; and
+
+(d) If the Work includes a "NOTICE" text file as part of its
+ distribution, then any Derivative Works that You distribute must
+ include a readable copy of the attribution notices contained
+ within such NOTICE file, excluding those notices that do not
+ pertain to any part of the Derivative Works, in at least one
+ of the following places: within a NOTICE text file distributed
+ as part of the Derivative Works; within the Source form or
+ documentation, if provided along with the Derivative Works; or,
+ within a display generated by the Derivative Works, if and
+ wherever such third-party notices normally appear. The contents
+ of the NOTICE file are for informational purposes only and
+ do not modify the License. You may add Your own attribution
+ notices within Derivative Works that You distribute, alongside
+ or as an addendum to the NOTICE text from the Work, provided
+ that such additional attribution notices cannot be construed
+ as modifying the License.
+
+You may add Your own copyright statement to Your modifications and
+may provide additional or different license terms and conditions
+for use, reproduction, or distribution of Your modifications, or
+for any such Derivative Works as a whole, provided Your use,
+reproduction, and distribution of the Work otherwise complies with
+the conditions stated in this License.
+
+5. Submission of Contributions. Unless You explicitly state otherwise,
+any Contribution intentionally submitted for inclusion in the Work
+by You to the Licensor shall be under the terms and conditions of
+this License, without any additional terms or conditions.
+Notwithstanding the above, nothing herein shall supersede or modify
+the terms of any separate license agreement you may have executed
+with Licensor regarding such Contributions.
+
+6. Trademarks. This License does not grant permission to use the trade
+names, trademarks, service marks, or product names of the Licensor,
+except as required for reasonable and customary use in describing the
+origin of the Work and reproducing the content of the NOTICE file.
+
+7. Disclaimer of Warranty. Unless required by applicable law or
+agreed to in writing, Licensor provides the Work (and each
+Contributor provides its Contributions) on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied, including, without limitation, any warranties or conditions
+of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+PARTICULAR PURPOSE. You are solely responsible for determining the
+appropriateness of using or redistributing the Work and assume any
+risks associated with Your exercise of permissions under this License.
+
+8. Limitation of Liability. In no event and under no legal theory,
+whether in tort (including negligence), contract, or otherwise,
+unless required by applicable law (such as deliberate and grossly
+negligent acts) or agreed to in writing, shall any Contributor be
+liable to You for damages, including any direct, indirect, special,
+incidental, or consequential damages of any character arising as a
+result of this License or out of the use or inability to use the
+Work (including but not limited to damages for loss of goodwill,
+work stoppage, computer failure or malfunction, or any and all
+other commercial damages or losses), even if such Contributor
+has been advised of the possibility of such damages.
+
+9. Accepting Warranty or Additional Liability. While redistributing
+the Work or Derivative Works thereof, You may choose to offer,
+and charge a fee for, acceptance of support, warranty, indemnity,
+or other liability obligations and/or rights consistent with this
+License. However, in accepting such obligations, You may act only
+on Your own behalf and on Your sole responsibility, not on behalf
+of any other Contributor, and only if You agree to indemnify,
+defend, and hold each Contributor harmless for any liability
+incurred by, or claims asserted against, such Contributor by reason
+of your accepting any such warranty or additional liability.
+
+END OF TERMS AND CONDITIONS
+
+JavaCC
+-----------------------
+Copyright (c) 2006, Sun Microsystems, Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the Sun Microsystems, Inc. nor the names of its
+      contributors may be used to endorse or promote products derived from
+      this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+
+
+JGraphT, qpOASES, Octave
+-----------------------
+		  GNU LESSER GENERAL PUBLIC LICENSE
+		       Version 2.1, February 1999
+
+ Copyright (C) 1991, 1999 Free Software Foundation, Inc.
+     59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+[This is the first released version of the Lesser GPL.  It also counts
+ as the successor of the GNU Library Public License, version 2, hence
+ the version number 2.1.]
+
+			    Preamble
+
+  The licenses for most software are designed to take away your
+freedom to share and change it.  By contrast, the GNU General Public
+Licenses are intended to guarantee your freedom to share and change
+free software--to make sure the software is free for all its users.
+
+  This license, the Lesser General Public License, applies to some
+specially designated software packages--typically libraries--of the
+Free Software Foundation and other authors who decide to use it.  You
+can use it too, but we suggest you first think carefully about whether
+this license or the ordinary General Public License is the better
+strategy to use in any particular case, based on the explanations below.
+
+  When we speak of free software, we are referring to freedom of use,
+not price.  Our General Public Licenses are designed to make sure that
+you have the freedom to distribute copies of free software (and charge
+for this service if you wish); that you receive source code or can get
+it if you want it; that you can change the software and use pieces of
+it in new free programs; and that you are informed that you can do
+these things.
+
+  To protect your rights, we need to make restrictions that forbid
+distributors to deny you these rights or to ask you to surrender these
+rights.  These restrictions translate to certain responsibilities for
+you if you distribute copies of the library or if you modify it.
+
+  For example, if you distribute copies of the library, whether gratis
+or for a fee, you must give the recipients all the rights that we gave
+you.  You must make sure that they, too, receive or can get the source
+code.  If you link other code with the library, you must provide
+complete object files to the recipients, so that they can relink them
+with the library after making changes to the library and recompiling
+it.  And you must show them these terms so they know their rights.
+
+  We protect your rights with a two-step method: (1) we copyright the
+library, and (2) we offer you this license, which gives you legal
+permission to copy, distribute and/or modify the library.
+
+  To protect each distributor, we want to make it very clear that
+there is no warranty for the free library.  Also, if the library is
+modified by someone else and passed on, the recipients should know
+that what they have is not the original version, so that the original
+author's reputation will not be affected by problems that might be
+introduced by others.
+
+  Finally, software patents pose a constant threat to the existence of
+any free program.  We wish to make sure that a company cannot
+effectively restrict the users of a free program by obtaining a
+restrictive license from a patent holder.  Therefore, we insist that
+any patent license obtained for a version of the library must be
+consistent with the full freedom of use specified in this license.
+
+  Most GNU software, including some libraries, is covered by the
+ordinary GNU General Public License.  This license, the GNU Lesser
+General Public License, applies to certain designated libraries, and
+is quite different from the ordinary General Public License.  We use
+this license for certain libraries in order to permit linking those
+libraries into non-free programs.
+
+  When a program is linked with a library, whether statically or using
+a shared library, the combination of the two is legally speaking a
+combined work, a derivative of the original library.  The ordinary
+General Public License therefore permits such linking only if the
+entire combination fits its criteria of freedom.  The Lesser General
+Public License permits more lax criteria for linking other code with
+the library.
+
+  We call this license the "Lesser" General Public License because it
+does Less to protect the user's freedom than the ordinary General
+Public License.  It also provides other free software developers Less
+of an advantage over competing non-free programs.  These disadvantages
+are the reason we use the ordinary General Public License for many
+libraries.  However, the Lesser license provides advantages in certain
+special circumstances.
+
+  For example, on rare occasions, there may be a special need to
+encourage the widest possible use of a certain library, so that it becomes
+a de-facto standard.  To achieve this, non-free programs must be
+allowed to use the library.  A more frequent case is that a free
+library does the same job as widely used non-free libraries.  In this
+case, there is little to gain by limiting the free library to free
+software only, so we use the Lesser General Public License.
+
+  In other cases, permission to use a particular library in non-free
+programs enables a greater number of people to use a large body of
+free software.  For example, permission to use the GNU C Library in
+non-free programs enables many more people to use the whole GNU
+operating system, as well as its variant, the GNU/Linux operating
+system.
+
+  Although the Lesser General Public License is Less protective of the
+users' freedom, it does ensure that the user of a program that is
+linked with the Library has the freedom and the wherewithal to run
+that program using a modified version of the Library.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.  Pay close attention to the difference between a
+"work based on the library" and a "work that uses the library".  The
+former contains code derived from the library, whereas the latter must
+be combined with the library in order to run.
+
+		  GNU LESSER GENERAL PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. This License Agreement applies to any software library or other
+program which contains a notice placed by the copyright holder or
+other authorized party saying it may be distributed under the terms of
+this Lesser General Public License (also called "this License").
+Each licensee is addressed as "you".
+
+  A "library" means a collection of software functions and/or data
+prepared so as to be conveniently linked with application programs
+(which use some of those functions and data) to form executables.
+
+  The "Library", below, refers to any such software library or work
+which has been distributed under these terms.  A "work based on the
+Library" means either the Library or any derivative work under
+copyright law: that is to say, a work containing the Library or a
+portion of it, either verbatim or with modifications and/or translated
+straightforwardly into another language.  (Hereinafter, translation is
+included without limitation in the term "modification".)
+
+  "Source code" for a work means the preferred form of the work for
+making modifications to it.  For a library, complete source code means
+all the source code for all modules it contains, plus any associated
+interface definition files, plus the scripts used to control compilation
+and installation of the library.
+
+  Activities other than copying, distribution and modification are not
+covered by this License; they are outside its scope.  The act of
+running a program using the Library is not restricted, and output from
+such a program is covered only if its contents constitute a work based
+on the Library (independent of the use of the Library in a tool for
+writing it).  Whether that is true depends on what the Library does
+and what the program that uses the Library does.
+  
+  1. You may copy and distribute verbatim copies of the Library's
+complete source code as you receive it, in any medium, provided that
+you conspicuously and appropriately publish on each copy an
+appropriate copyright notice and disclaimer of warranty; keep intact
+all the notices that refer to this License and to the absence of any
+warranty; and distribute a copy of this License along with the
+Library.
+
+  You may charge a fee for the physical act of transferring a copy,
+and you may at your option offer warranty protection in exchange for a
+fee.
+
+  2. You may modify your copy or copies of the Library or any portion
+of it, thus forming a work based on the Library, and copy and
+distribute such modifications or work under the terms of Section 1
+above, provided that you also meet all of these conditions:
+
+    a) The modified work must itself be a software library.
+
+    b) You must cause the files modified to carry prominent notices
+    stating that you changed the files and the date of any change.
+
+    c) You must cause the whole of the work to be licensed at no
+    charge to all third parties under the terms of this License.
+
+    d) If a facility in the modified Library refers to a function or a
+    table of data to be supplied by an application program that uses
+    the facility, other than as an argument passed when the facility
+    is invoked, then you must make a good faith effort to ensure that,
+    in the event an application does not supply such function or
+    table, the facility still operates, and performs whatever part of
+    its purpose remains meaningful.
+
+    (For example, a function in a library to compute square roots has
+    a purpose that is entirely well-defined independent of the
+    application.  Therefore, Subsection 2d requires that any
+    application-supplied function or table used by this function must
+    be optional: if the application does not supply it, the square
+    root function must still compute square roots.)
+
+These requirements apply to the modified work as a whole.  If
+identifiable sections of that work are not derived from the Library,
+and can be reasonably considered independent and separate works in
+themselves, then this License, and its terms, do not apply to those
+sections when you distribute them as separate works.  But when you
+distribute the same sections as part of a whole which is a work based
+on the Library, the distribution of the whole must be on the terms of
+this License, whose permissions for other licensees extend to the
+entire whole, and thus to each and every part regardless of who wrote
+it.
+
+Thus, it is not the intent of this section to claim rights or contest
+your rights to work written entirely by you; rather, the intent is to
+exercise the right to control the distribution of derivative or
+collective works based on the Library.
+
+In addition, mere aggregation of another work not based on the Library
+with the Library (or with a work based on the Library) on a volume of
+a storage or distribution medium does not bring the other work under
+the scope of this License.
+
+  3. You may opt to apply the terms of the ordinary GNU General Public
+License instead of this License to a given copy of the Library.  To do
+this, you must alter all the notices that refer to this License, so
+that they refer to the ordinary GNU General Public License, version 2,
+instead of to this License.  (If a newer version than version 2 of the
+ordinary GNU General Public License has appeared, then you can specify
+that version instead if you wish.)  Do not make any other change in
+these notices.
+
+  Once this change is made in a given copy, it is irreversible for
+that copy, so the ordinary GNU General Public License applies to all
+subsequent copies and derivative works made from that copy.
+
+  This option is useful when you wish to copy part of the code of
+the Library into a program that is not a library.
+
+  4. You may copy and distribute the Library (or a portion or
+derivative of it, under Section 2) in object code or executable form
+under the terms of Sections 1 and 2 above provided that you accompany
+it with the complete corresponding machine-readable source code, which
+must be distributed under the terms of Sections 1 and 2 above on a
+medium customarily used for software interchange.
+
+  If distribution of object code is made by offering access to copy
+from a designated place, then offering equivalent access to copy the
+source code from the same place satisfies the requirement to
+distribute the source code, even though third parties are not
+compelled to copy the source along with the object code.
+
+  5. A program that contains no derivative of any portion of the
+Library, but is designed to work with the Library by being compiled or
+linked with it, is called a "work that uses the Library".  Such a
+work, in isolation, is not a derivative work of the Library, and
+therefore falls outside the scope of this License.
+
+  However, linking a "work that uses the Library" with the Library
+creates an executable that is a derivative of the Library (because it
+contains portions of the Library), rather than a "work that uses the
+library".  The executable is therefore covered by this License.
+Section 6 states terms for distribution of such executables.
+
+  When a "work that uses the Library" uses material from a header file
+that is part of the Library, the object code for the work may be a
+derivative work of the Library even though the source code is not.
+Whether this is true is especially significant if the work can be
+linked without the Library, or if the work is itself a library.  The
+threshold for this to be true is not precisely defined by law.
+
+  If such an object file uses only numerical parameters, data
+structure layouts and accessors, and small macros and small inline
+functions (ten lines or less in length), then the use of the object
+file is unrestricted, regardless of whether it is legally a derivative
+work.  (Executables containing this object code plus portions of the
+Library will still fall under Section 6.)
+
+  Otherwise, if the work is a derivative of the Library, you may
+distribute the object code for the work under the terms of Section 6.
+Any executables containing that work also fall under Section 6,
+whether or not they are linked directly with the Library itself.
+
+  6. As an exception to the Sections above, you may also combine or
+link a "work that uses the Library" with the Library to produce a
+work containing portions of the Library, and distribute that work
+under terms of your choice, provided that the terms permit
+modification of the work for the customer's own use and reverse
+engineering for debugging such modifications.
+
+  You must give prominent notice with each copy of the work that the
+Library is used in it and that the Library and its use are covered by
+this License.  You must supply a copy of this License.  If the work
+during execution displays copyright notices, you must include the
+copyright notice for the Library among them, as well as a reference
+directing the user to the copy of this License.  Also, you must do one
+of these things:
+
+    a) Accompany the work with the complete corresponding
+    machine-readable source code for the Library including whatever
+    changes were used in the work (which must be distributed under
+    Sections 1 and 2 above); and, if the work is an executable linked
+    with the Library, with the complete machine-readable "work that
+    uses the Library", as object code and/or source code, so that the
+    user can modify the Library and then relink to produce a modified
+    executable containing the modified Library.  (It is understood
+    that the user who changes the contents of definitions files in the
+    Library will not necessarily be able to recompile the application
+    to use the modified definitions.)
+
+    b) Use a suitable shared library mechanism for linking with the
+    Library.  A suitable mechanism is one that (1) uses at run time a
+    copy of the library already present on the user's computer system,
+    rather than copying library functions into the executable, and (2)
+    will operate properly with a modified version of the library, if
+    the user installs one, as long as the modified version is
+    interface-compatible with the version that the work was made with.
+
+    c) Accompany the work with a written offer, valid for at
+    least three years, to give the same user the materials
+    specified in Subsection 6a, above, for a charge no more
+    than the cost of performing this distribution.
+
+    d) If distribution of the work is made by offering access to copy
+    from a designated place, offer equivalent access to copy the above
+    specified materials from the same place.
+
+    e) Verify that the user has already received a copy of these
+    materials or that you have already sent this user a copy.
+
+  For an executable, the required form of the "work that uses the
+Library" must include any data and utility programs needed for
+reproducing the executable from it.  However, as a special exception,
+the materials to be distributed need not include anything that is
+normally distributed (in either source or binary form) with the major
+components (compiler, kernel, and so on) of the operating system on
+which the executable runs, unless that component itself accompanies
+the executable.
+
+  It may happen that this requirement contradicts the license
+restrictions of other proprietary libraries that do not normally
+accompany the operating system.  Such a contradiction means you cannot
+use both them and the Library together in an executable that you
+distribute.
+
+  7. You may place library facilities that are a work based on the
+Library side-by-side in a single library together with other library
+facilities not covered by this License, and distribute such a combined
+library, provided that the separate distribution of the work based on
+the Library and of the other library facilities is otherwise
+permitted, and provided that you do these two things:
+
+    a) Accompany the combined library with a copy of the same work
+    based on the Library, uncombined with any other library
+    facilities.  This must be distributed under the terms of the
+    Sections above.
+
+    b) Give prominent notice with the combined library of the fact
+    that part of it is a work based on the Library, and explaining
+    where to find the accompanying uncombined form of the same work.
+
+  8. You may not copy, modify, sublicense, link with, or distribute
+the Library except as expressly provided under this License.  Any
+attempt otherwise to copy, modify, sublicense, link with, or
+distribute the Library is void, and will automatically terminate your
+rights under this License.  However, parties who have received copies,
+or rights, from you under this License will not have their licenses
+terminated so long as such parties remain in full compliance.
+
+  9. You are not required to accept this License, since you have not
+signed it.  However, nothing else grants you permission to modify or
+distribute the Library or its derivative works.  These actions are
+prohibited by law if you do not accept this License.  Therefore, by
+modifying or distributing the Library (or any work based on the
+Library), you indicate your acceptance of this License to do so, and
+all its terms and conditions for copying, distributing or modifying
+the Library or works based on it.
+
+  10. Each time you redistribute the Library (or any work based on the
+Library), the recipient automatically receives a license from the
+original licensor to copy, distribute, link with or modify the Library
+subject to these terms and conditions.  You may not impose any further
+restrictions on the recipients' exercise of the rights granted herein.
+You are not responsible for enforcing compliance by third parties with
+this License.
+
+  11. If, as a consequence of a court judgment or allegation of patent
+infringement or for any other reason (not limited to patent issues),
+conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot
+distribute so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you
+may not distribute the Library at all.  For example, if a patent
+license would not permit royalty-free redistribution of the Library by
+all those who receive copies directly or indirectly through you, then
+the only way you could satisfy both it and this License would be to
+refrain entirely from distribution of the Library.
+
+If any portion of this section is held invalid or unenforceable under any
+particular circumstance, the balance of the section is intended to apply,
+and the section as a whole is intended to apply in other circumstances.
+
+It is not the purpose of this section to induce you to infringe any
+patents or other property right claims or to contest validity of any
+such claims; this section has the sole purpose of protecting the
+integrity of the free software distribution system which is
+implemented by public license practices.  Many people have made
+generous contributions to the wide range of software distributed
+through that system in reliance on consistent application of that
+system; it is up to the author/donor to decide if he or she is willing
+to distribute software through any other system and a licensee cannot
+impose that choice.
+
+This section is intended to make thoroughly clear what is believed to
+be a consequence of the rest of this License.
+
+  12. If the distribution and/or use of the Library is restricted in
+certain countries either by patents or by copyrighted interfaces, the
+original copyright holder who places the Library under this License may add
+an explicit geographical distribution limitation excluding those countries,
+so that distribution is permitted only in or among countries not thus
+excluded.  In such case, this License incorporates the limitation as if
+written in the body of this License.
+
+  13. The Free Software Foundation may publish revised and/or new
+versions of the Lesser General Public License from time to time.
+Such new versions will be similar in spirit to the present version,
+but may differ in detail to address new problems or concerns.
+
+Each version is given a distinguishing version number.  If the Library
+specifies a version number of this License which applies to it and
+"any later version", you have the option of following the terms and
+conditions either of that version or of any later version published by
+the Free Software Foundation.  If the Library does not specify a
+license version number, you may choose any version ever published by
+the Free Software Foundation.
+
+  14. If you wish to incorporate parts of the Library into other free
+programs whose distribution conditions are incompatible with these,
+write to the author to ask for permission.  For software which is
+copyrighted by the Free Software Foundation, write to the Free
+Software Foundation; we sometimes make exceptions for this.  Our
+decision will be guided by the two goals of preserving the free status
+of all derivatives of our free software and of promoting the sharing
+and reuse of software generally.
+
+			    NO WARRANTY
+
+  15. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO
+WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW.
+EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR
+OTHER PARTIES PROVIDE THE LIBRARY "AS IS" WITHOUT WARRANTY OF ANY
+KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
+LIBRARY IS WITH YOU.  SHOULD THE LIBRARY PROVE DEFECTIVE, YOU ASSUME
+THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+  16. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN
+WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
+AND/OR REDISTRIBUTE THE LIBRARY AS PERMITTED ABOVE, BE LIABLE TO YOU
+FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR
+CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE
+LIBRARY (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
+RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
+FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
+SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGES.
+
+		     END OF TERMS AND CONDITIONS
+
+
+Gurobi
+-----------------------
+GUROBI OPTIMIZATION, INC.
+END-USER LICENSE AGREEMENT
+("Agreement")
+
+Please read the terms and conditions of this license agreement carefully.  By installing and enabling the Gurobi Product(s) you are accepting the terms of this agreement.  (The Product(s) will be enabled when you have installed the License Key(s) that is supplied to you by Gurobi.) The Effective Date of this Agreement is the date on which the Gurobi Product(s) is installed and enabled.  The Gurobi Product(s) is copyrighted and licensed (not sold) to you by Gurobi Optimization, Inc., a corporation with its principal place of business in Houston, Texas.  This Agreement shall apply to all Gurobi Products, unless replaced by Gurobi.  It consists of 1) the accompanying Terms and Conditions; 2) the Licensed Products addendum ("Exhibit A"); and 3) the Maintenance and Support addendum ("Exhibit B").
+TERMS AND CONDITIONS
+
+.	DEFINITIONS
+..	 "Error" means any reported and reproducible failure of the Product(s) to perform substantially in accordance with its published documentation.  "Error Correction" means either a modification or addition that, when made or added to the Product(s), brings the Product(s) into material conformity with its published documentation, or a procedure or routine that, when observed in the regular operation of the Product(s), avoids the practical adverse effect of such nonconformity.   "Material Error" means any reported and verifiable failure of the Product(s) to perform substantially in accordance with its published documentation where this Error prevents use of the Product(s), or which seriously impacts use of the Product(s).   "Product(s)" is the Gurobi Optimizer Version 5.5.0 or higher in the form of object code libraries, including all Upgrades and published documentation as further described in Exhibit A.  "Upgrades" shall mean any Error Corrections, new Releases (as defined in the Exhibit B), and software modifications or additions, which are provided at Gurobi’s sole discretion pursuant to Exhibit B.  "You" or "your" means the single end-user customer organization accepting this Agreement.
+.	SCOPE OF RIGHTS
+..	Grant of License.  Gurobi grants you a non-exclusive right to use the Product(s) (including any Error Corrections, standard enhancements or Upgrades provided under Exhibit B) for use only as specified in Exhibit A, in machine-readable form ("Product License").  This Product License specifically prohibits redistribution, transfer or resale of the Product(s).  You may make a reasonable number of copies of the Program in machine-readable, object code form, for nonproductive backup purposes only.
+..	Limitations on Use.  You may not use, copy, modify, or distribute the Product(s), or make any copy, adaptation, transcription, or merge any portion thereof, except as expressly authorized by Gurobi in a separate written agreement signed by Gurobi.  You may not reverse assemble, reverse compile, or otherwise translate the Product(s).  Your license may not be transferred, leased, assigned, or sub-licensed without Gurobi’s prior written consent, which will not be unreasonably withheld.  If you copy or modify the Product(s) in any way not expressly authorized by Gurobi, your license is automatically terminated.
+.	MAINTENANCE AND SUPPORT 
+..	Maintenance and Support.  Gurobi offers a Maintenance and Support program as set forth in Exhibit B.   Maintenance and support is not available for academic licenses.
+.	LICENSE FEES
+.. 	Payment Terms.  Unless otherwise indicated on the invoice, all invoices from Gurobi shall be due and payable within thirty (30) days of the date of each invoice. Except as provided in Paragraph 8.2 (Right to Cure), the fees are not refundable. If any fees are not paid when due, Gurobi may, at its option, charge interest at a rate of one and one-half percent (1½%) per month or, if less, the highest rate allowed by applicable law from the date such fee or charge first became due.
+.. 	Taxes.  You are responsible for sales or use taxes, and state or local property or excise taxes associated with your licensing, possession, or use of the Product(s), modifications, or any associated services. 
+.	WARRANTIES
+..	Warranty.  Gurobi warrants for a period of sixty (60) days after the Effective Date of this Agreement, for your benefit alone, that the Product(s) will perform substantially in accordance with the documentation. Gurobi does not warrant that the Product(s) will be Error-free in all circumstances.  As your exclusive remedy for any defect or Material Error in the Product(s), and as Gurobi’s entire liability in contract, tort, or otherwise, Gurobi agrees to correct such Material Error or defect at Gurobi’s facility by issuing corrected instructions, a restriction, or a work around.  If Gurobi is unable to correct such defect or Material Error after a reasonable opportunity, Gurobi shall refund the License Fees paid for such Product(s).  This warranty does not apply to the free Trial Version, the free Academic Version or otherwise to time limited Evaluation Versions of the Product(s), which are provided to you at no charge "as is".
+..	Limitation on Warranty.  EXCEPT AS EXPRESSLY SET FORTH IN THIS SECTION 5, GUROBI SHALL HAVE NO LIABILITY FOR THE PRODUCT(S), FOR NEGLIGENCE; GUROBI MAKES AND YOU RECEIVE NO WARRANTIES, EXPRESS, IMPLIED, OR STATUTORY, OR IN ANY OTHER PROVISION OF THIS AGREEMENT OR ANY OTHER COMMUNICATION; AND GUROBI SPECIFICALLY DISCLAIMS ANY WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+..	Limitation of Liability; Exclusion of Consequential Damages.  The cumulative liability of Gurobi to you for any and all claims relating to the Product(s) and any services rendered under this Agreement shall not exceed the total amount of all License Fees paid to Gurobi for the Product(s) within the prior year.  This limitation shall not apply to the indemnification provided in Section 8 ("Indemnification").  In no event shall Gurobi be liable to you for any consequential, indirect, special, or incidental damages, even if Gurobi has been advised of the possibility of such potential loss or damage.  The foregoing limitation of liability and exclusion of certain damages shall apply regardless of the success or effectiveness of other remedies.
+.	OWNERSHIP
+..	Ownership.  Gurobi shall have sole right, title, and interest in and to the Product(s) and all documentation relating to the Product(s) (including its development or its operation, testing or use, and all reports and copies created), and all intellectual property rights associated with the Product(s) (including, without limitation, rights to copyrights, patents, trade secrets, and know-how).  This Agreement does not provide you with title or ownership of the Product(s), but only a right of limited use under this license.
+.	CONFIDENTIAL INFORMATION
+..	Confidential Information.  "Confidential Information" means any data or information, oral or written, treated as confidential that relates to either party’s past, present, or future research, development or business activities, including any unannounced products and service(s), and including any information relating to services, developments, inventions, processes, plans, financial information, customer lists, forecasts, and projections.  Notwithstanding the foregoing, Confidential Information shall not be deemed to include information that: 1) is publicly available or in the public domain at the time disclosed; 2) is or becomes publicly available or enters the public domain through no fault of the party receiving such information; 3) is rightfully communicated to the recipient by persons not bound by confidentiality obligations with respect thereto; 4) is already in the recipient’s possession free of any confidentiality obligations with respect thereto at the time of disclosure; 5) is independently developed by the recipient; or 6) is approved for release or disclosure by the disclosing party without restriction.
+.	INDEMNIFICATION
+..	Indemnification.  If a third party claims that the Product(s) infringes any U.S. patent, copyright, or trade secret, Gurobi will (as long as you are not in default under this Agreement or any other agreement with Gurobi) defend you against such claim at Gurobi’s expense and pay all damages that a court finally awards, including reasonable attorneys’ fees, provided that you promptly notify Gurobi in writing of the claim, allow Gurobi to control the defense of such claim, and cooperate with Gurobi in the defense or any related settlement negotiations.
+..	Right to Cure.  If such a claim is made or appears possible, Gurobi may, at its option, secure for you the right to continue to use the Product(s), or modify or replace the Product(s) so it is non-infringing, or, if neither of the foregoing options is available in Gurobi’s judgment, require you to return the Product(s) for a credit equal to the portion of previously paid License Fees allocable to the remaining term of your license.
+..	No Obligation.  Gurobi has no obligation for any claim based on a modified version of the Product(s), or its combination, operation, or use with any product, data, or apparatus not provided by Gurobi, or for the data provided by you.  THIS PARAGRAPH STATES GUROBI’S ENTIRE OBLIGATION TO YOU WITH RESPECT TO ANY CLAIM OF INFRINGEMENT.
+.	TERM AND TERMINATION
+..	Term.  The term of your license is from the Effective Date above and shall continue thereafter, unless terminated sooner according to the terms of this Agreement. 
+..	Material Breach.  This Agreement may be terminated: 1) by either party upon a material breach by the other party of the terms of this Agreement, which breach has not been cured within thirty (30) days after the breaching party has received written notice thereof; 2) by Gurobi, upon fifteen (15) days written notice, in the event of any delinquency of your payment of amounts due hereunder; or 3) by the non-breaching party upon three (3) days written notice in the event of breach of Section 7 (Confidential Information).
+..	Survival.  Notwithstanding the termination of this Agreement for any reason, the rights and duties of the parties under Sections 4 (License Fees), 6 (Ownership), 7 (Confidential Information), and 8 (Indemnification) shall survive such termination and remain in full force and effect.
+.	EXPORT CONTROLS
+..	Export Controls.  Neither the Product(s), Documentation, nor any other information, process, product, or service obtained directly or indirectly from Gurobi, may be shipped, exported, or re-exported to any country or entity that is the subject of any prohibition imposed by the U.S. Export Administration Act of 1979, U.S. Executive Orders, the U.S. Department of Commerce, or the North Atlantic Treaty Organization (NATO), or any other applicable export control laws and regulations of the U.S. or any other country. 
+.	GENERAL 
+.. 	Assignment.  This Agreement shall not be assignable by you without the prior written consent of Gurobi.
+.. 	Waiver of Construction against the Drafter.  This Agreement shall be interpreted in accordance with the plain meaning of its terms and not strictly for or against either of the parties to this Agreement.
+.. 	Severability.  In the event that any provision of this Agreement is found invalid or unenforceable pursuant to judicial decree or decision, the remainder of this Agreement shall remain valid and enforceable according to its terms. WITHOUT LIMITING THE FOREGOING, IT IS EXPRESSLY UNDERSTOOD AND AGREED THAT, IN THE EVENT ANY REMEDY HEREUNDER IS DETERMINED TO HAVE FAILED OF ITS ESSENTIAL PURPOSE, ALL OTHER LIMITATIONS OF LIABILITY AND EXCLUSION OF DAMAGES SET FORTH HEREIN SHALL REMAIN IN FULL FORCE AND EFFECT.
+..	Notices.  All notices or other communications required to be given under this Agreement shall be in writing and delivered either personally or by U.S. mail, certified, return receipt requested, postage prepaid, and addressed as provided in this Agreement or as otherwise requested by the receiving party.  Notices delivered personally shall be effective upon delivery and notices delivered by mail shall be effective upon their receipt by the party to whom they are addressed.
+..	Governing Law.  This Agreement shall be governed by, and construed and enforced in accordance with the laws of the State of Texas as they apply to a contract made and performed in such state.  Venue for any dispute under this Agreement shall be San Francisco, California.
+..	Modifications and Waivers.  This Agreement may not be modified except by a writing signed by authorized representatives of both parties. A waiver by either party of its rights hereunder shall not be binding unless contained in a writing signed by an authorized representative of the party waiving its rights.  The non-enforcement or waiver of any provision on one (1) occasion shall not constitute a waiver of such provision on any other occasions unless expressly so agreed in writing.  It is agreed that no use of trade or other regular practice or method of dealing between the parties hereto shall be used to modify, interpret, supplement, or alter in any manner the terms of this Agreement.
+..	Force Majeure.  Neither party shall be responsible for any failure to perform due to unforeseen circumstances or to causes beyond the parties’ reasonable control, including but not limited to acts of God, war, riot, embargoes, acts of civil or military authorities, fire, floods, accidents, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials. In the event of any such delay, either party may defer any delivery dates for a period equal to the time of such delay. Notwithstanding the foregoing, if either party is in default under this Section for more than forty five (45) days, the non-defaulting party may terminate this Agreement.
+.. 	No Set Off.  Notwithstanding anything to the contrary in this Agreement, you waive your right to suspend or set off any payment obligation to Gurobi on any basis whatsoever.
+..	Arbitration.  Any controversy or claim arising out of or relating to this Agreement, or the breach thereof that fails to settle by mediation, shall be settled by binding arbitration in the County of Santa Clara, California, administered by JAMS in accordance with its then current Commercial Arbitration Rules, and judgment on the award rendered by the arbitrator may be entered in any court having jurisdiction thereof.  The arbitrator may award monetary damages, punitive damages, injunctive relief, rescission, restitution, costs and attorneys’ fees.  The arbitration award shall be final and binding regardless of whether one of the parties fails or refuses to participate in the arbitration.  The arbitrator shall not have the power to amend this Agreement in any respect.  Notwithstanding the foregoing, the parties agree that this Section does not apply to the breach of provisions pertaining to confidentiality and proprietary rights, and that either party may petition a court of law for injunctive relief and such other rights and remedies as it may have at law or equity against such breaches.
+..	Attorneys’ Fees.  In the event of any dispute with respect to this Agreement, the prevailing party shall be entitled to reasonable attorneys’ fees and other costs and expenses incurred in resolving such dispute.
+
+
+         
+ 
+EXHIBIT A
+LICENSED PRODUCTS
+
+The Product(s) is offered in the following categories of licenses:
+
+Note:  Gurobi commercial licenses can be used for development or deployment (sometimes called "run-time"), or both.  In particular, it is possible to use a Gurobi commercial license for the development of an application and then use that same license to deploy the application, subject only to the specific machine and usage-level limitations of that particular license.   There is also no limit on the number of specific applications you may use with a given Gurobi license.
+
+1.	Size-Limited (free) Trial License:  Six-month time-limited, free license for problems with at most 500 variables and 500 constraints.   The use of this license is restricted to a single person identified during the installation process.    This license is for research, development, and evaluation purposes only.  It may not be used in commercial applications.
+2.	General License Restrictions:  In all cases below, license Users and Uses are restricted to you and your employees.  In particular, making the Product(s) available over the Internet or similar networking technology to others who are not your employees ("Hosting") is forbidden, with one exception, as follows.  Hosting, that otherwise respects the limitations of the license, is permitted if the Product(s) is embedded in and only accessible through a user-developed application that adds significant additional functionality.
+3.	Commercial Licenses
+a.	Perpetual Single-Use – Single-Machine License: This license is locked to a particular physical machine and its use is restricted to a single simultaneous use.
+b.	Perpetual Named-User – Unlimited-Use, Single-Machine License: This license is locked to a particular physical machine and its use is restricted to a single identified person.  That person is allowed an unlimited number of simultaneous uses.
+c.	Perpetual Unlimited-User – Unlimited-Use, Single-Machine License: This license is locked to a particular physical machine. The number of simultaneous users and uses is unlimited. The license depends on the number of CPU sockets in the physical machine.
+d.	Perpetual Floating-Use License: This license runs on a single, specified local-area network of machines. One particular physical machine in this collection acts as the license server. The Gurobi Product(s) can be installed and run on any machine on the network with an operating environment that is among the supported platforms.    This license has a specified limit on the number of simultaneous Gurobi processes that can be run on the machines of this network.
+e.	Perpetual Compute Server – Unlimited-User, Unlimited-Use, Unlimited-Client, Single-Machine License:   This license is locked to a particular physical machine, which acts as a server for an unlimited number of client machines.  The number of instances and uses on the clients is also unlimited.  The license depends on the number of CPU sockets in the physical machine.
+f.	Virtual-Machine Licensing:  Any of the above licenses may be used on a virtual machine. We also offer a Perpetual Virtual Host Machine License.  This license allows an unlimited number of virtual machines to share a single physical host machine, with each virtual machine having its own Unlimited-User, Unlimited-Use, Single-Machine License (3c). 
+g.	Time-limited Evaluation License. These licenses can be of any of the above types 3a-3f, but will have a specified time limit determined at the time the License Key is issued (typically two (2) weeks from the date of issue).
+4.	Academic Licenses:  These licenses are restricted to academic use.  Access for commercial purposes is forbidden.  You and any users of the code must be faculty, staff, or students at a degree-granting academic institution. 
+a.	Free Time-limited Named-User – Unlimited-Use, Single-Machine License:  Same conditions as 3b, with the following additional restrictions.  The license will have a one-year time limit from the date of installation and must be "validated" while connected to the Internet from a recognized academic domain (e.g., ".edu"). 
+b.	Perpetual Unlimited-Simultaneous-Use Floating-Use License: This license has the same conditions as 3d.  It has a limit (the physical limit of the licensor) of 1024 simultaneous Gurobi processes that can be run on the machines of this network.
+c.	Note:  Maintenance and support contracts (Exhibit B) are not offered with academic licenses.
+
+
+GUROBI OPTIMIZER FUNCTIONALITY AND PLATFORMS
+
+Functionality:
+
+The Gurobi Optimizer includes state-of-the-art linear programming (LP), quadratic programming (QP), quadratically constrained programming (QCP), and second order cone programming (SOCP) solvers, including mixed-integer programming (MIP) extensions of each.  The MIP solvers include shared memory parallelism, capable of simultaneously exploiting any number of processors and cores per processor.  The Gurobi Optimizer is written in C and is accessible from several languages. We provide an interactive Python interface, matrix-oriented interfaces for C, MATLAB, and R, and object-oriented interfaces for C++, Java, .NET, and Python.
+
+Platforms:
+
+The Platforms supported are 32-bit and 64-bit Windows (including but not limited to Windows XP, Windows Vista, Windows 7, Windows 8, and Windows Server), 64-bit Linux (including but not limited to RedHat, SUSE, and Ubuntu distributions), 64-bit MAC OS (10.7, and 10.8), and 64-bit AIX (6.1 and 7.1).
+Documentation:
+The Gurobi Documentation includes the Release Notes, the Quick Start Guide, the Gurobi Reference Manual, and the Gurobi Example Tour, all of which are delivered in HTML format. 
+
+EXHIBIT B
+MAINTENANCE AND SUPPORT
+
+Maintenance Term.  The Maintenance Term for the Product(s) shall commence on The Effective Date of the Agreement ("Maintenance Term").   Annual Maintenance and Support contracts cover one year of Maintenance and Support.  The fees for a Maintenance and Support contract are 20% of the then current standard list price for the Product(s) covered by the contract.  First year Maintenance and Support is not included in the list price of the license.  Maintenance and Support is not available with academic licenses.
+
+Reactivating Maintenance.  In the event you do not purchase Maintenance and Support services for some period  and choose to enter into a new Maintenance and Support contract at a later date, you will be charged the then prevailing annual Maintenance and Support fees for the periods that were not covered.
+
+Gurobi Product Releases are numbered ‘a.b.c’, where ‘a’ is a positive integer, and ‘b’, and ‘c’ are non-negative integers.  ‘a’ is the number of the Major Release, ‘b’ the number of the Minor Release, and ‘c’ the number of the Technical Release.
+
+A Gurobi Maintenance and Support Contract includes the following benefits:  
+(1)	During the Maintenance Term Gurobi warrants that the Product(s) will perform substantially in accordance with the documentation published by Gurobi as updated from time to time. Gurobi does not warrant that the Product(s) will be Error-free in all circumstances.  
+(2)	During the Maintenance Term, Gurobi shall make reasonable commercial efforts to correct, or devise workarounds for any Errors in the Product(s) reported by you, and to provide such corrections or workarounds to you in a timely manner in accordance with the list of Service Levels given below. Some Errors will be corrected in the next release of the Product(s) only. Further, upon discovery of an Error, you agree, if requested by Gurobi, to submit to Gurobi a listing of output and any other data that Gurobi may require in order to reproduce the Error and the operating conditions under which the Error occurred or was discovered.  
+(3)	Support will be provided remotely by electronic communication during normal business hours.
+(4)	During the Maintenance Term, you are entitled to all Upgrades to any new release of the licensed Product(s) where that release occurs during this period.  Except in the case of purchased Academic licenses, if you have not paid for maintenance and support, you are entitled only to your currently licensed release. Academic licenses are entitled to receive Minor and Technical releases corresponding to their currently licensed Major release.
+(5)	During each one-year Maintenance Term your license may be transferred to a new machine or operating system up to three times free of charge.  Additional transfers will be accompanied by a nominal charge of $250.  Licenses not covered by Maintenance and Support will incur a charge of $500 for a transfer or change in environment that requires the issuance of a new license.
+
+Maintenance Exceptions. Maintenance and Support does not cover the following:
+(1)	Any problem caused by modifications to any version of the Product(s) not made or authorized by Gurobi;
+(2)	Errors in any versions of the Product(s) other than the most recent two major releases (see Use and Restrictions)
+(3)	Use with a compiler not listed in the Platform Table, as indicated in the Release Notes.
+(4)	Use with an operating system not listed in the Platform Table, including alternate Linux distributions
+(5)	Use of undocumented private APIs
+(6)	Custom code beyond calls to the Gurobi APIs
+(7)	Hardware modifications such as overclocking
+(8)	Use of 3rd party tools such as databases, application servers, integrated development environments, etc.
+In these situations, Gurobi will try to help when possible, but assistance cannot be guaranteed.  
+
+Gurobi will not be responsible for delays caused by events or circumstances beyond its reasonable control.
+
+Use and Restrictions.  Your rights and obligations concerning the use of any Error Corrections or new Releases (or any other programming provided by Gurobi, regardless of its form or purpose) shall be governed by the License Agreement.  Gurobi shall have sole and exclusive ownership of all right, title, and interest in and to such works (including ownership of all copyrights, patent rights, trade secret rights and other intellectual property rights pertaining thereto), subject only to the License Agreement.  Unless otherwise agreed, you are entitled to use the Product(s) only as authorized under the License Agreement.   Gurobi releases will no longer be supported after the release of the second subsequent Major release.  For example, releases 3.b.c will no longer be supported subsequent to release 5.0.0 and higher.
+
+Service Levels.  For each support request, a Gurobi representative will assign a service priority, according to the following table of "Service Levels".
+
+Priority	Description	Examples	Initial response target
+
+1 - Urgent	Production system completely blocked with no apparent workaround: one or more models cannot be solved in a production system.	License key failure for production system
+Segmentation fault for production system	Within 2 business hours
+
+2 - High	Non-blocking issue for a production system: a malfunction of one or more Gurobi features on a production system, though a workaround is available.	Unexpected slow performance for a production system 
+Failure with specific parameter values for production system	Within 8 business hours
+
+3 - Important	Any issue with a non-production system: any malfunction of Gurobi features for a non-production system, or any requests for performance evaluation and tuning.	Any failure in a non-production environment 
+Benchmark requests	By the end of the next business day
+4 - Normal	All other questions.	"How-to" questions 
+Product suggestions 
+Questions involving topics in Exceptions to the Service Levels	Within 3 business days 
+
+Exceptions to the Service Levels.  Due to their complexity, questions on the following topics are considered Normal priority, regardless of whether they are blocking or whether they involve a production system:
+(1)	Use of undocumented Gurobi parameters
+(2)	Use of callback functions that modify the behavior of Gurobi algorithms.
+(3)	Models with severe numerical issues such as poor scaling or single-precision fractional coefficients.
+
+Response Times.  As soon as Gurobi staff receives sufficient detail to isolate or reproduce the situation, Gurobi will assign it a case number and a priority level, and Gurobi staff will start an initial assessment.  A response for the initial assessment will be given according to the Initial Response Target for that priority level.  When the initial estimate is complete, Gurobi will give an estimated timeframe for resolution.
+
+Eclipse, its pacakages, and COIN-OR SYMPHONY
+--------------------------------------------
+Eclipse Public License - v 1.0
+
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
+
+1. DEFINITIONS
+
+"Contribution" means:
+
+a) in the case of the initial Contributor, the initial code and documentation distributed under this Agreement, and
+
+b) in the case of each subsequent Contributor:
+
+i) changes to the Program, and
+
+ii) additions to the Program;
+
+where such changes and/or additions to the Program originate from and are distributed by that particular Contributor. A Contribution 'originates' from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor's behalf. Contributions do not include additions to the Program which: (i) are separate modules of software distributed in conjunction with the Program under their own license agreement, and (ii) are not derivative works of the Program.
+
+"Contributor" means any person or entity that distributes the Program.
+
+"Licensed Patents" mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.
+
+"Program" means the Contributions distributed in accordance with this Agreement.
+
+"Recipient" means anyone who receives the Program under this Agreement, including all Contributors.
+
+2. GRANT OF RIGHTS
+
+a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.
+
+b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.
+
+c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.
+
+d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.
+
+3. REQUIREMENTS
+
+A Contributor may choose to distribute the Program in object code form under its own license agreement, provided that:
+
+a) it complies with the terms and conditions of this Agreement; and
+
+b) its license agreement:
+
+i) effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
+
+ii) effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;
+
+iii) states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and
+
+iv) states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.
+
+When the Program is made available in source code form:
+
+a) it must be made available under this Agreement; and
+
+b) a copy of this Agreement must be included with each copy of the Program.
+
+Contributors may not remove or alter any copyright notices contained within the Program.
+
+Each Contributor must identify itself as the originator of its Contribution, if any, in a manner that reasonably allows subsequent Recipients to identify the originator of the Contribution.
+
+4. COMMERCIAL DISTRIBUTION
+
+Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor ("Commercial Contributor") hereby agrees to defend and indemnify every other Contributor ("Indemnified Contributor") against any losses, damages and costs (collectively "Losses") arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.
+
+For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor's responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.
+
+5. NO WARRANTY
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
+
+6. DISCLAIMER OF LIABILITY
+
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7. GENERAL
+
+If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
+
+If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.
+
+All Recipient's rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient's rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient's obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.
+
+Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement Steward has the right to modify this Agreement. The Eclipse Foundation is the initial Agreement Steward. The Eclipse Foundation may assign the responsibility to serve as the Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may always be distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may elect to distribute the Program (including its Contributions) under the new version. Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved.
+
+This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.

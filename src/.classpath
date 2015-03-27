@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="benchmarks/|gurobi.jar" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="libs/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="libs/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="libs/gurobi.jar"/>
+	<classpathentry kind="lib" path="libs/javacc.jar"/>
+	<classpathentry kind="lib" path="libs/javaoctave-0.6.4.jar"/>
+	<classpathentry kind="lib" path="libs/jgrapht-core-0.9.0.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
