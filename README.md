@@ -154,13 +154,13 @@ Example runtime result: less than 1 min
 
 
 ## Developers
-* [Hadi Goudarzi](<hgoudarz@usc.edu>)
-* [Mohammad Javad Dousti](<dousti@usc.edu>)
-* [Alireza Shafaei](<shafaeb@usc.edu>)
-* [Massoud Pedram](<pedram@usc.edu>)
+* [Hadi Goudarzi](mailto:hgoudarz@usc.edu)
+* [Mohammad Javad Dousti](mailto:dousti@usc.edu)
+* [Alireza Shafaei](mailto:shafaeb@usc.edu>)
+* [Massoud Pedram](mailto:pedram@usc.edu)
 
 ## Questions or Bugs?
-You may contact [Mohammad Javad Dousti](<dousti@usc.edu>) for any questions you may have or bugs that you find.
+You may contact [Mohammad Javad Dousti](mailto:dousti@usc.edu) for any questions you may have or bugs that you find.
 
 ## License
 Please refer to the [LICENSE](LICENSE) file.
