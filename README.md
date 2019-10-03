@@ -5,6 +5,7 @@ Quantum ULB Factory Designer (QUFD) maps a given QASM file to a supplied PMD fab
 
 ## Directories & Files Structure
 ```
+QUFD
 |-- build.xml -> Ant build file
 |-- FTGates -> QASM files for each fault-tolerant gate
 |-- PMD
@@ -71,7 +72,9 @@ circuit will be generated.
 ```
 
 **Note:** In order to use the free QP solver (qpOASES), the command should be changed as follows:
-	java -jar qufd.jar -q src/libs/qpOASES-3.0beta
+```
+java -jar qufd.jar -q src/libs/qpOASES-3.0beta
+```
 
 ## Example
 Getting the physical resource estimation for the FT-H gate, Ion Trap PMD, and [[7,1,3]] Steane code:
