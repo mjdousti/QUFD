@@ -1,29 +1,28 @@
 # QUFD: Quantum ULB Factory Designer
 
-## Description:
+## Description
 Quantum ULB Factory Designer (QUFD) maps a given QASM file to a supplied PMD fabric. The resultant MCL file of the mapped circuit will be generated. This tool designs Ion Trap tiles to be used by Quantum Physical Designer (such as HL-QSPR or Squash). It calculates the physical resource requirements for the mapping process.
 
 ## Directories & Files Structure
 ```
-QUFD
 |-- build.xml -> Ant build file
 |-- FTGates -> QASM files for each fault-tolerant gate
 |-- PMD
-	|-- IonTrap.xml -> IonTrap fabric description
+  |-- IonTrap.xml -> IonTrap fabric description
 |-- qufd.pdf -> QUFD paper published in QIP 2014
 |-- src
-	|-- edu -> Java source code directory
-	|-- libs
-		|-- commons-cli-1.2.jar -> Appache Commons CLI library
-		|-- commons-lang3-3.1.jar -> Apache Commons Lang library
-		|-- commons-logging-1.1.3.jar -> Apache Commons Logging library
-		|-- gurobi.jar -> Gurobi 5.6.2 Java interface
-		|-- jar-in-jar-loader.zip -> Jar loader file taken from Eclipse.
-		|-- javacc.jar -> Java Compiler Compiler (JavaCC)
-		|-- javaoctave-0.6.4.jar ->  JavaOctave library. A bridge from Java to Octave, useful if you want to use the free solver (qpOASES). 
-		|-- jgrapht-jdk1.6.jar -> JGraphT library.
-		|-- qpOASES-3.0beta -> A free quadratic programming solver.
-`-- README -> This readme file.
+  |-- edu -> Java source code directory
+  |-- libs
+    |-- commons-cli-1.2.jar -> Appache Commons CLI library
+    |-- commons-lang3-3.1.jar -> Apache Commons Lang library
+    |-- commons-logging-1.1.3.jar -> Apache Commons Logging library
+    |-- gurobi.jar -> Gurobi 5.6.2 Java interface
+    |-- jar-in-jar-loader.zip -> Jar loader file taken from Eclipse.
+    |-- javacc.jar -> Java Compiler Compiler (JavaCC)
+    |-- javaoctave-0.6.4.jar ->  JavaOctave library. A bridge from Java to Octave, useful if you want to use the free solver (qpOASES).
+    |-- jgrapht-jdk1.6.jar -> JGraphT library.
+    |-- qpOASES-3.0beta -> A free quadratic programming solver.
+`-- README.md -> This readme file.
 ```
 
 ## Requirements
@@ -46,7 +45,7 @@ Make sure that all the requirements are already installed. The following environ
 2) Octave binary file should be in the system `PATH`.
 
 
-## Compile:
+## Compile
 A Makefile takes care of the build process. You may enter the following commands to build and clean the project:
 ```
 $ make            # makes QUFD with Gurobi support
@@ -74,7 +73,7 @@ circuit will be generated.
 **Note:** In order to use the free QP solver (qpOASES), the command should be changed as follows:
 	java -jar qufd.jar -q src/libs/qpOASES-3.0beta
 
-## Example:
+## Example
 Getting the physical resource estimation for the FT-H gate, Ion Trap PMD, and [[7,1,3]] Steane code:
 ```
 $ java -jar qufd.jar -i FTGates/H.qasm -p PMD/IonTrap.xml -r H.re -m H.mcl
@@ -162,5 +161,3 @@ You may contact [Mohammad Javad Dousti](<dousti@usc.edu>) for any questions you 
 
 ## License
 Please refer to the [LICENSE](LICENSE) file.
-
-
